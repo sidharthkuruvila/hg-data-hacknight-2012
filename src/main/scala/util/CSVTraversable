@@ -1,0 +1,74 @@
+class CSVTraversable(src: Source) extends Traversable[String] {
+
+  case class State
+  case object InWord extends State
+  case object InString extends State
+  case object CloseQuote extends State
+  case object InComma extends State
+
+
+
+  var state: State = null
+  var ch: Char = 0;
+
+  def foreach[U](f: String => U): Unit = {
+    
+    try {
+      while(true){
+        state = InWord
+        val sb = new StringBuffer()
+        read(sb)
+        f(sb.toString)
+      }
+    } catch {
+      case e: java.util.NoSuchElementException => 
+    }
+  }
+
+  @scala.annotation.tailrec
+  private def read(sb: StringBuffer){
+    readChar()
+    sb.append(ch)
+    state match {
+      case InWord => {
+        if(ch == ','){
+        } else if (ch == '\n') {
+          readChar()
+        } else if(ch == '"') {
+          state = InString
+          read(sb)
+        } else {
+          read(sb)
+        }
+      }
+      case InString => {
+        if(ch == '"'){
+          state = CloseQuote
+          read(sb)
+        } else {
+          read(sb)
+        }
+      }
+      case CloseQuote => {
+        if(ch == '"'){
+          state = InString
+          read(sb)
+        } else if (ch == ','){
+        } else if (ch == '\n') {
+          readChar()
+        } else {
+          state = InWord
+          read(sb)
+
+        }
+      }
+      case InComma => {
+
+      }
+    }
+  }
+
+  def readChar(){
+    ch = src.next()
+  }
+}

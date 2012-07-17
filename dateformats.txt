@@ -1,0 +1,43 @@
+MM/dd/yy
+yyyy-dd-MM
+MMMMM d, yyyy
+MMMMM  d, yyyy
+yyyy-MM-dd'T'HH:mm:ss
+d MMMMM, yyyy
+EEE MMM dd yyyy
+yyyyMMdd
+yyyy-mm-dd
+yyyyMMdd'T'HHmmZ
+yyyy-MM-dd'T'HH:mm
+yyyy-MM-dd HH:mm:ss
+yyyy-MM-dd'T'HH:mm'Z'
+yyyy-MM-dd HH:mm
+'Review Date': dd/MM/yyyy
+yyyymmdd'T'HHmm
+yyyy/mm/dd
+HH:mm dd MMMMM yyyy
+dd/MM/yyyy HH:mm:ss
+yyyy-MM-dd'T'HH:mm:ssZ
+dd MMMMM yyyy
+yyMdd't'HHmmss
+yyyy-MM-dd'T'HH:mmZ
+MMM dd yyyy
+yyyy-MM-dd'MST'HH:mm:ss:-25200
+yyyy-MM-dd'MDT'HH:mm:ss:-21600
+yyyy-MM-dd'CDT'HH:mm:ss:-18000
+'Submitted': M/d/yy hh:mm a
+MMMMM yy
+yyyy-MM-dd HH:mm:ss ZZZ
+yyyy-MM-dd HH:mm:ss.0 'PST'
+yyyy-MM-dd HH:mm:ss.0 'PDT'
+dd MMM yy, HH:mm
+MMM dd, yyyy
+MMM. dd, yyyy
+EEE MMM dd HH:mm:ss ZZZ yyyy
+EEEEE MMM dd, yyyy
+yyyy-MM-DD
+yyyyMMdd'T'HHmm-0000:00
+dd/MM/yyyy
+dd MMM yyyy HH:mm:ss 'EDT'
+yyyy.MM.dd
+MM/yyyy

@@ -63,56 +63,7 @@ object Test {
 
   def dp(s:String) = DateTimeFormat.forPattern(s)
 
-  val dateFormats = List(
-    dp("MM/dd/yy"),
-    dp("yyyy-dd-MM"),
-    dp("MMMMM d, yyyy"),
-    dp("MMMMM  d, yyyy"),
-    dp("yyyy-MM-dd'T'HH:mm:ss"),
-    dp("d MMMMM, yyyy"),
-    dp("EEE MMM dd yyyy"),
-    dp("yyyyMMdd"),
-    dp("yyyy-mm-dd"),//Someone messed up their format string
-    dp("yyyyMMdd'T'HHmmZ"),
-    dp("yyyy-MM-dd'T'HH:mm"),
-    dp("yyyy-MM-dd HH:mm:ss"),
-    dp("yyyy-MM-dd'T'HH:mm'Z'"),
-    dp("yyyy-MM-dd HH:mm"),
-    dp("'Review Date': dd/MM/yyyy"),
-    dp("yyyymmdd'T'HHmm"),
-    dp("yyyy/mm/dd"),
-    dp("HH:mm dd MMMMM yyyy"),
-    dp("dd/MM/yyyy HH:mm:ss"),
-    dp("yyyy-MM-dd'T'HH:mm:ssZ"),
-    dp("dd MMMMM yyyy"),
-    dp("yyMdd't'HHmmss"),
-    dp("yyyy-MM-dd'T'HH:mmZ"),
-    dp("MMM dd yyyy"),
-    dp("yyyy-MM-dd'MST'HH:mm:ss:-25200"),
-    dp("yyyy-MM-dd'MDT'HH:mm:ss:-21600"),
-    dp("yyyy-MM-dd'CDT'HH:mm:ss:-18000"),
-    //2009-06-18CDT10:26:58:-18000
-    dp("'Submitted': M/d/yy hh:mm a"),
-    dp("MMMMM yy"),
-    dp("yyyy-MM-dd HH:mm:ss ZZZ"),
-    dp("yyyy-MM-dd HH:mm:ss.0 'PST'"),
-    dp("yyyy-MM-dd HH:mm:ss.0 'PDT'"),
-    dp("dd MMM yy, HH:mm"),
-    dp("MMM\240dd,\240yyyy"), // Uses nbsps
-    dp("MMM. dd, yyyy"),
-    dp("EEE MMM dd HH:mm:ss ZZZ yyyy"),
-    dp("EEEEE MMM dd, yyyy"),
-    dp("yyyy-MM-DD"),
-    dp("yyyyMMdd'T'HHmm-0000:00"),
-    dp("dd/MM/yyyy"),
-    dp("dd MMM yyyy HH:mm:ss 'EDT'"),
-    dp("yyyy.MM.dd"),
-    dp("MM/yyyy")
-    /*,
-    DateTimeFormat.forPattern("MMM dd, yyyy")*/
-    /*,
-    ISODateTimeFormat.dateTime()*/
-  )
+  val dateFormats = Source.fromFile("dateformats.txt").getLines.map(dp).toList
 
   def parseDateTime(s: String):Option[DateTime] = {
     //Really bad dates ones i need to remove 

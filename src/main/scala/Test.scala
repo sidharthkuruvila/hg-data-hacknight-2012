@@ -95,8 +95,22 @@ object Test {
     "Octobre" -> "October",
     "Novembre" -> "November",
     "Noviembre" -> "November",
-    "Diciembre" -> "December"
+    "Diciembre" -> "December",
+    //Italian Months
+    "Gennaio" -> "January",
+    "Febbraio" -> "February",
+    "Marzo" -> "March",
+    "Aprile" -> "April",
+    "Maggio" -> "May",
+    "Giugno" -> "June",
+    "Luglio" -> "July",
+    "Agosto" -> "August",
+    "Settembre" -> "September",
+    "Ottobre" -> "October",
+    "Novembre" -> "November",
+    "Dicembre" -> "December"
   )
+
   var badDates = List(
     ("(.+?) [|]".r , (m:Match) => m.group(1)),
     ("\\d+t\\d+".r , (m:Match) => {println("bad date 1 needs to be implemented here"); "10/10/10"}),
@@ -106,7 +120,8 @@ object Test {
     ("Posted \\d+ (?:month|day)s? ago \\(([^)]+)\\)".r, (m:Match) =>  m.group(1)),
     
     (",(\\d+/\\d+/\\d+)".r, (m:Match) =>  m.group(1)),
-    (("(\\d+ )(" + lookupMonth.keys.mkString("|") + ")( \\d+)").r, (m:Match) =>  m.group(1) + lookupMonth(m.group(2)) + m.group(3))
+    (("(\\d+ )(" + lookupMonth.keys.mkString("|") + ")( \\d+)").r, (m:Match) =>  m.group(1) + lookupMonth(m.group(2)) + m.group(3)),
+    ("(\\w+ \\d+ \\d+ \\d+:\\d+\\w+) \\(more reviews by [^)]+\\)".r, (m:Match) =>  m.group(1))
   )
 
   def cleanDateString(s:String) =  {

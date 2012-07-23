@@ -41,3 +41,7 @@ dd/MM/yyyy
 dd MMM yyyy HH:mm:ss 'EDT'
 yyyy.MM.dd
 MM/yyyy
+EEE MMM dd HH:mm:ss Z yyyy
+yyyyMMdd'T'HH:mm:ssZZ
+yyyy/MM/dd HH:mm:ss'Create'
+MMM dd yyyy h:mma
